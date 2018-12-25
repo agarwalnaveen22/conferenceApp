@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center padding>
+
+  <ion-item class="logo">
+    <img src="assets/login.png" />
+  </ion-item>
+
+  <ion-item class="item-size" margin-top>
+    <ion-label position="floating">Membership Code</ion-label>
+    <ion-input [(ngModel)]="membershipCode"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="login()" class="item-size" fill="outline" expand="block" margin-top color="primary">Sign In</ion-button>
+
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Signature</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="title">Use your finger to sign in</div>
+  <ion-row [ngClass]="{'drawing-active': isDrawing}">
+    <ion-col></ion-col>
+    <ion-col>
+      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+    </ion-col>
+    <ion-col></ion-col>
+
+  </ion-row>
+
+  <div style="float:left; width: 100%">
+    <ion-button class="item-size" style="margin-right:10%" fill="outline" (click)="clearPad()" expand="block"
+      margin-top color="danger">Clear</ion-button>
+    <ion-button class="item-size" style="margin-left:10%" fill="outline" (click)="savePad()" expand="block" margin-top
+      color="primary">Continue</ion-button>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,49 @@
+ion-header {
+    height: 10em;
+}
+
+ion-toolbar {
+    height: 10em;
+    --background: none;
+}
+
+ion-back-button {
+    color: white;
+}
+
+ion-icon {
+    font-size: 3em;
+}
+
+.top-label {
+    float: left;
+    width: 100%;
+}
+
+.event-title {
+    font-size: 1.2em !important;
+    width: 100%;
+    font-weight: bold;
+    color: white !important;
+}
+
+.event-description {
+    font-size: 1em !important;
+    width: 100%;
+    float: left;
+    padding-top: 2%;
+    color: white !important;
+}
+
+.avatar-title {
+    font-size: 1em !important;
+    width: 100%;
+    font-weight: bold;
+}
+
+.avatar-description {
+    font-size: 0.8em !important;
+    width: 100%;
+    float: left;
+    padding-top: 2%;
+}

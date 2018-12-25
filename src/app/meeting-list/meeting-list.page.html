@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Meeting Breakdown</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Welcome to Today's program</ion-label>
+  </ion-item>
+
+  <ion-card *ngFor="let event of events" (click)="goToPage()">
+    <ion-item>
+      <ion-label class="item-title">{{event.event_title}}</ion-label>
+      <div text-right class="item-time">{{event.event_date_time | date: 'shortTime'}}</div>
+    </ion-item>
+
+    <ion-card-content>
+      {{event.event_description}}
+    </ion-card-content>
+    <ion-card-content text-center *ngIf="event.event_image!='' && event.event_image!=null">
+      <img src="{{event.event_image}}" />
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

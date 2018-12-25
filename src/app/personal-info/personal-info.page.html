@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item class="item-size" margin-top style="margin-top:20%">
+    <ion-label position="stacked">First Name</ion-label>
+    <ion-input [(ngModel)]="firstName"></ion-input>
+  </ion-item>
+
+  <ion-item class="item-size" margin-top>
+    <ion-label position="stacked">Last Name</ion-label>
+    <ion-input [(ngModel)]="lastName"></ion-input>
+  </ion-item>
+
+  <ion-item class="item-size" margin-top>
+    <ion-label position="stacked">Member number</ion-label>
+    <ion-input [(ngModel)]="memberNumber" type="tel"></ion-input>
+  </ion-item>
+
+  <ion-item class="item-size" margin-top>
+    <ion-label position="stacked">Company</ion-label>
+    <ion-input [(ngModel)]="company"></ion-input>
+  </ion-item>
+
+  <ion-item class="item-size" margin-top>
+    <ion-label position="stacked">Email address</ion-label>
+    <ion-input [(ngModel)]="emailAddress" type="email"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="update()" class="item-size" style="margin-top:15%" fill="outline" expand="block" margin-top
+    color="primary">Confirm</ion-button>
+
+</ion-content>
