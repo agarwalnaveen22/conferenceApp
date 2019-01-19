@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'signature', loadChildren: './signature/signature.module#SignaturePageModule' },
   { path: 'personal-info', loadChildren: './personal-info/personal-info.module#PersonalInfoPageModule' },
   { path: 'meeting-list', loadChildren: './meeting-list/meeting-list.module#MeetingListPageModule' },
-  { path: 'meeting-detail', loadChildren: './meeting-detail/meeting-detail.module#MeetingDetailPageModule' },
+  { path: 'meeting-detail/:id', loadChildren: './meeting-detail/meeting-detail.module#MeetingDetailPageModule' },
 ];
 
 @NgModule({

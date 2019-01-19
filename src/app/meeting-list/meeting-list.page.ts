@@ -33,7 +33,7 @@ export class MeetingListPage implements OnInit {
   }
 
   goToPage = () => {
-    this.navCtrl.navigateForward("/meeting-detail");
+    this.navCtrl.navigateForward("/meeting-detail/"+this.events.event.event_id);
   }
 
 }

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "655996825777",
+    "firebase_url": "https://conferenceapp-dd170.firebaseio.com",
+    "project_id": "conferenceapp-dd170",
+    "storage_bucket": "conferenceapp-dd170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655996825777:android:8dad921f8a18f999",
+        "android_client_info": {
+          "package_name": "com.kudosta.conferenceApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655996825777-rnn3pr9q22hrfr8uk622sju060ic2ur3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7uuGKGCbPXBEg1CyVv7ADvJaU-cfC1Nw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

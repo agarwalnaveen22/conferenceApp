@@ -12,17 +12,17 @@
     <ion-label>Welcome to Today's program</ion-label>
   </ion-item>
 
-  <ion-card *ngFor="let event of events" (click)="goToPage()">
+  <ion-card *ngFor="let event of events.event_detail" (click)="goToPage()">
     <ion-item>
-      <ion-label class="item-title">{{event.event_title}}</ion-label>
-      <div text-right class="item-time">{{event.event_date_time | date: 'shortTime'}}</div>
+      <ion-label class="item-title">{{event.event_detail_title}}</ion-label>
+      <div text-right class="item-time">{{event.event_detail_date_time | date: 'shortTime'}}</div>
     </ion-item>
 
     <ion-card-content>
-      {{event.event_description}}
+      {{event.event_detail_description}}
     </ion-card-content>
-    <ion-card-content text-center *ngIf="event.event_image!='' && event.event_image!=null">
-      <img src="{{event.event_image}}" />
+    <ion-card-content text-center *ngIf="event.event_detail_image!='' && event.event_detail_image!=null">
+      <img src="{{event.event_detail_image}}" />
     </ion-card-content>
   </ion-card>
 

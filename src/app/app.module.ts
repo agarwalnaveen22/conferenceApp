@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
+import { FCM } from '@ionic-native/fcm/ngx';
+import { Device } from '@ionic-native/device/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +31,9 @@ import { AppRoutingModule } from './app-routing.module';
     StatusBar,
     FileTransfer,
     SplashScreen,
+    WheelSelector,
+    FCM,
+    Device,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

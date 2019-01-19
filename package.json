@@ -21,14 +21,18 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@ionic-native/core": "5.0.0-beta.21",
+    "@ionic-native/device": "^5.0.0-beta.23",
+    "@ionic-native/fcm": "^5.0.0-beta.23",
     "@ionic-native/file-transfer": "^5.0.0-beta.22",
     "@ionic-native/splash-screen": "5.0.0-beta.21",
     "@ionic-native/status-bar": "5.0.0-beta.21",
+    "@ionic-native/wheel-selector": "^5.0.0-beta.22",
     "@ionic/angular": "4.0.0-beta.17",
     "@ionic/storage": "^2.2.0",
     "angular2-signaturepad": "^2.8.0",
     "cordova-android": "7.1.4",
     "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-fcm-with-dependecy-updated": "2.4.0",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-file-transfer": "1.7.1",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
@@ -36,6 +40,7 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-wheel-selector-plugin": "1.1.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
@@ -77,7 +82,9 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-file-transfer": {}
+      "cordova-plugin-file-transfer": {},
+      "cordova-wheel-selector-plugin": {},
+      "cordova-plugin-fcm-with-dependecy-updated": {}
     },
     "platforms": [
       "android"

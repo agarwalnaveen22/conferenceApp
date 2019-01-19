@@ -7,14 +7,13 @@
 </ion-header>
 
 <ion-content>
-
     <ion-grid style="padding:0">
         <ion-row style="background-color: floralwhite">
-          <ion-col text-center>
-            <ion-icon style="color:lightgreen" name="ios-checkmark-circle"></ion-icon>
+          <ion-col text-center (click)="checkIn()">
+            <ion-icon [ngClass]="isCheckedIn?'checkedIn':'unCheckedIn'" name="ios-checkmark-circle"></ion-icon>
             <ion-label class="top-label">Check-in</ion-label>
           </ion-col>
-          <ion-col text-center>
+          <ion-col text-center (click)="selectReminderTime()">
             <ion-icon style="color:crimson" name="calendar"></ion-icon>
             <ion-label class="top-label">Reminder</ion-label>
           </ion-col>
@@ -25,82 +24,27 @@
         </ion-row>
         <ion-row style="background-color: burlywood">
           <ion-col>
-            <ion-label class="event-title">Annual general meeting</ion-label>
-            <ion-label class="event-description">some detail</ion-label>
+            <ion-label class="event-title">{{eventDetail.event.event_title}}</ion-label>
+            <ion-label class="event-description">{{eventDetail.event.event_description}}</ion-label>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-card>
+      <ion-card *ngFor="let speaker of eventDetail.event_speaker">
           <ion-item>
             <ion-avatar slot="start">
-              <img src="assets/login.png">
+              <img src="{{speaker.es_image}}">
             </ion-avatar>
             <div>
-              <ion-label class="avatar-title">Item Avatar</ion-label>
-              <ion-label class="avatar-description">Item Avatar</ion-label>
+              <ion-label class="avatar-title">{{speaker.es_first_name}} {{speaker.es_last_name}}</ion-label>
+              <ion-label class="avatar-description">{{speaker.es_job_title}}</ion-label>
             </div>
   
           </ion-item>
   
           <ion-card-content>
-            lorem ipsum csadhas sac asdijas dsdisd asdlsd saijdsa dsaldijsad sadijas
-            sakjdsad sdasjds dsdij
+            {{speaker.es_biodata}}
           </ion-card-content>
         </ion-card>
-
-        <ion-card>
-            <ion-item>
-              <ion-avatar slot="start">
-                <img src="assets/login.png">
-              </ion-avatar>
-              <div>
-                <ion-label class="avatar-title">Item Avatar</ion-label>
-                <ion-label class="avatar-description">Item Avatar</ion-label>
-              </div>
-    
-            </ion-item>
-    
-            <ion-card-content>
-              lorem ipsum csadhas sac asdijas dsdisd asdlsd saijdsa dsaldijsad sadijas
-              sakjdsad sdasjds dsdij
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card>
-              <ion-item>
-                <ion-avatar slot="start">
-                  <img src="assets/login.png">
-                </ion-avatar>
-                <div>
-                  <ion-label class="avatar-title">Item Avatar</ion-label>
-                  <ion-label class="avatar-description">Item Avatar</ion-label>
-                </div>
-      
-              </ion-item>
-      
-              <ion-card-content>
-                lorem ipsum csadhas sac asdijas dsdisd asdlsd saijdsa dsaldijsad sadijas
-                sakjdsad sdasjds dsdij
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <img src="assets/login.png">
-                  </ion-avatar>
-                  <div>
-                    <ion-label class="avatar-title">Item Avatar</ion-label>
-                    <ion-label class="avatar-description">Item Avatar</ion-label>
-                  </div>
-        
-                </ion-item>
-        
-                <ion-card-content>
-                  lorem ipsum csadhas sac asdijas dsdisd asdlsd saijdsa dsaldijsad sadijas
-                  sakjdsad sdasjds dsdij
-                </ion-card-content>
-              </ion-card>
         
 
 </ion-content>
