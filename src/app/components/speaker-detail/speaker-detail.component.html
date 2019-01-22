@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Speaker</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{speakerDetail.es_image}}">
+      </ion-avatar>
+      <div>
+        <ion-label class="avatar-title">{{speakerDetail.es_first_name}} {{speakerDetail.es_last_name}}</ion-label>
+        <ion-label class="avatar-description">{{speakerDetail.es_company_name}}</ion-label>
+        <ion-label class="avatar-description">{{speakerDetail.es_job_title}}</ion-label>
+        <ion-label class="avatar-description">{{speakerDetail.es_email}}</ion-label>
+      </div>
+
+    </ion-item>
+
+    <ion-card-content>
+      {{speakerDetail.es_biodata}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -3,7 +3,7 @@
     <name>conference</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.1.102:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -84,6 +84,5 @@
     <plugin name="cordova-wheel-selector-plugin" spec="1.1.1" />
     <plugin name="cordova-plugin-fcm-with-dependecy-updated" spec="2.4.0" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
-    <allow-navigation href="http://192.168.1.102:8100" sessionid="8639aee6" />
     <engine name="android" spec="7.1.4" />
 </widget>

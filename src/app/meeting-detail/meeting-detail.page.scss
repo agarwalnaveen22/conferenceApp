@@ -5,10 +5,11 @@ ion-header {
 ion-toolbar {
     height: 10em;
     --background: none;
+    background-size: 100%;
 }
 
 ion-back-button {
-    color: white;
+    color: black;
 }
 
 ion-icon {

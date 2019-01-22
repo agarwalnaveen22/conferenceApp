@@ -29,7 +29,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-card *ngFor="let speaker of eventDetail.event_speaker">
+      <ion-card *ngFor="let speaker of eventDetail.event_speaker" (click)="openSpeakerDetail()">
           <ion-item>
             <ion-avatar slot="start">
               <img src="{{speaker.es_image}}">

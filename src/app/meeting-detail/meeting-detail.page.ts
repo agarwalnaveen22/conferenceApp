@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
 import { RestService } from '../services/rest.service';
 import { CommonService } from '../services/common.service';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { ActivatedRoute, Params } from '@angular/router';
+import { SpeakerDetailComponent } from '../components/speaker-detail/speaker-detail.component';
 
 @Component({
   selector: 'app-meeting-detail',
@@ -21,9 +22,8 @@ export class MeetingDetailPage implements OnInit {
   constructor(
     private selector: WheelSelector,
     private restService: RestService,
-    private commonService: CommonService,
-    private navCtrl: NavController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private modalController: ModalController
   ) {
     this.route.params.subscribe((params: Params) => {
       this.eventId = params['id'];
@@ -60,6 +60,7 @@ export class MeetingDetailPage implements OnInit {
 
   async ngOnInit() {
     this.userInfo = await this.restService.getStorage("userInfo");
+    this.openSpeakerDetail(5);
   }
 
   getEventDetail = async () => {
@@ -132,6 +133,14 @@ export class MeetingDetailPage implements OnInit {
     } else {
       await this.restService.showToast("You are already checked In");
     }
+  }
+
+  openSpeakerDetail = async (id) => {
+    const modal = await this.modalController.create({
+      component: SpeakerDetailComponent,
+      componentProps: { speakerId: id }
+    });
+    return await modal.present();
   }
 
 }

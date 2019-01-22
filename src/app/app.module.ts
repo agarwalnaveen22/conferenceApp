@@ -14,12 +14,13 @@ import { Device } from '@ionic-native/device/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SpeakerDetailComponent } from './components/speaker-detail/speaker-detail.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, SpeakerDetailComponent],
+  entryComponents: [SpeakerDetailComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
