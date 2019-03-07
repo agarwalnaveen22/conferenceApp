@@ -1,0 +1,58 @@
+ion-textarea {
+    height: 75%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+ion-grid {
+    margin-left: 0;
+    margin-right: 0;
+    width:100%;
+}
+
+ion-buttons {
+    margin-left: 0;
+}
+
+.sender {
+    float: right;
+    width: 70%;
+    height: auto;
+    background: blue;
+
+    ion-label {
+        color: white !important;
+        word-break: break-word
+    }
+}
+
+.receiver {
+    float: left;
+    width: 70%;
+    height: auto;
+    background: lightgray;
+
+    ion-label {
+        color: black !important;
+        word-break: break-word
+    }
+}
+
+.sender-info {
+    font-size: 0.8em;
+    color: lightgrey;
+}
+
+.receiver-info {
+    color: black;
+}
+
+.virtual-item {
+    position: inherit !important;
+}
+
+.time {
+    float: right;
+}

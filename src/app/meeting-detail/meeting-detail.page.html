@@ -17,7 +17,7 @@
             <ion-icon style="color:crimson" name="calendar"></ion-icon>
             <ion-label class="top-label">Reminder</ion-label>
           </ion-col>
-          <ion-col text-center>
+          <ion-col text-center (click)="checkeInUsers()">
             <ion-icon style="color:cornflowerblue" name="chatbubbles"></ion-icon>
             <ion-label class="top-label">Chat</ion-label>
           </ion-col>
@@ -29,7 +29,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-card *ngFor="let speaker of eventDetail.event_speaker" (click)="openSpeakerDetail()">
+      <ion-card *ngFor="let speaker of eventDetail.event_speaker" (click)="openSpeakerDetail(speaker.es_id)">
           <ion-item>
             <ion-avatar slot="start">
               <img src="{{speaker.es_image}}">

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{receiverName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-chip *ngFor="let message of allChatMessages" [ngClass]="message.sender_id==userId?'sender':'receiver'">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label color="secondary">{{message.message}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="sender-info">
+        <ion-col>
+            <span *ngIf="message.sender_id==userId">From: You</span>
+            <span class="receiver-info" *ngIf="message.sender_id!=userId">From: {{message.sender_name}}</span>
+        </ion-col>
+        <ion-col>
+          <span *ngIf="message.sender_id==userId">{{message.created_date | date:'dd/MM/yy hh:mm a'}}</span>
+          <span class="receiver-info" *ngIf="message.sender_id!=userId">{{message.created_date | date:'dd/MM/yy hh:mm a'}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-chip>
+
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-textarea [(ngModel)]="message" placeholder="Type your message here"></ion-textarea>
+    <ion-buttons slot="end">
+      <ion-button (click)="send()">
+        <ion-icon slot="icon-only" name="send"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-footer>

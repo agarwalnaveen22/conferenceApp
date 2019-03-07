@@ -30,7 +30,6 @@ export class SignaturePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.signaturePad.clear();
   }
 
   drawComplete() {

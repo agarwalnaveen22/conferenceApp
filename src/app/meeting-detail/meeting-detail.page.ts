@@ -23,7 +23,8 @@ export class MeetingDetailPage implements OnInit {
     private selector: WheelSelector,
     private restService: RestService,
     private route: ActivatedRoute,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private navCtrl: NavController
   ) {
     this.route.params.subscribe((params: Params) => {
       this.eventId = params['id'];
@@ -60,7 +61,6 @@ export class MeetingDetailPage implements OnInit {
 
   async ngOnInit() {
     this.userInfo = await this.restService.getStorage("userInfo");
-    this.openSpeakerDetail(5);
   }
 
   getEventDetail = async () => {
@@ -71,6 +71,7 @@ export class MeetingDetailPage implements OnInit {
     }
     let result = await this.restService.makeGetRequest(requestData);
     this.restService.hideLoader();
+    this.checkAlreadyCheckIn();
     if (!result['app_error']) {
       this.eventDetail = result['app_user'];
       this.headerImg = this.eventDetail['event']['event_image'];
@@ -114,6 +115,23 @@ export class MeetingDetailPage implements OnInit {
     );
   }
 
+  checkAlreadyCheckIn = async () => {
+    await this.restService.showLoader('Please wait...');
+    let requestData = {
+      app_action: "app_checkin_status",
+      uid: this.userInfo['id'],
+      eid: this.eventId
+    }
+    let result = await this.restService.makeGetRequest(requestData);
+    this.restService.hideLoader();
+    if (!result['app_error']) {
+      this.isCheckedIn = true;
+    } else {
+      this.isCheckedIn = false;
+      // this.restService.showAlert('Error', result['app_message']);
+    }
+  }
+
   checkIn = async () => {
     if (!this.isCheckedIn) {
       await this.restService.showLoader('Checking in...');
@@ -133,6 +151,10 @@ export class MeetingDetailPage implements OnInit {
     } else {
       await this.restService.showToast("You are already checked In");
     }
+  }
+
+  checkeInUsers = () => {
+    this.navCtrl.navigateForward("/chat-users-list/" + this.eventId);
   }
 
   openSpeakerDetail = async (id) => {

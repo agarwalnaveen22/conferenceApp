@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Online Users</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToChat(0,'All')">
+        All
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-virtual-scroll [items]="users">
+    <ion-item *virtualItem="let item" (click)="goToChat(item.id, item.first_name)">
+      <ion-avatar slot="start">
+        <img [src]="item.user_img">
+      </ion-avatar>
+      <ion-label>{{item.first_name}} {{item.last_name}}</ion-label>
+    </ion-item>
+  </ion-virtual-scroll>
+
+</ion-content>

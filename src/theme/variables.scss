@@ -88,3 +88,8 @@ app-speaker-detail {
 ion-modal {
   background-color: rgba(0,0,0,0.5);
 }
+
+ion-item {
+  --border-style: none;
+  --highlight-color-focused: transparent;
+}
